@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>אקסל בשלושים צעדים · שיעור 1 חינם</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Secular+One&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef4ec;--paper:#fbfdfa;--ink:#14231a;--muted:#4f6257;--line:#c2d2c6;--green:#107c41;--on-green:#fff;--sel:#fff2a8;--soft:#e1eee4;--bad:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1713;--paper:#16211b;--ink:#e9f1ea;--muted:#9db0a3;--line:#2f4237;--green:#3fbf7f;--on-green:#07150d;--sel:#4a4310;--soft:#1c2f24;--bad:#ff8a80;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1713;--paper:#16211b;--ink:#e9f1ea;--muted:#9db0a3;--line:#2f4237;--green:#3fbf7f;--on-green:#07150d;--sel:#4a4310;--soft:#1c2f24;--bad:#ff8a80;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.75 Heebo,"Segoe UI",Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:10}
+body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.45;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 30px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 16px 10px}
+.hw{max-width:780px;margin:auto;display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
+.hw b{color:var(--ink);font-family:"Secular One",Heebo,Arial,sans-serif;font-weight:400;font-size:16px}
+.track{max-width:780px;margin:6px auto 0;height:6px;background:var(--soft);border:1px solid var(--line)}
+#bar{height:100%;width:0;background:var(--green);transition:width .4s}
+main{max-width:780px;margin:auto;padding:22px 16px 80px}
+h1,h2{font-family:"Secular One",Heebo,Arial,sans-serif;font-weight:400;line-height:1.2;margin:0}
+h1{font-size:clamp(34px,8vw,56px);margin:14px 0 10px}
+h2{font-size:25px;margin-bottom:10px}
+p{margin:0 0 12px;max-width:62ch}
+.fx{direction:ltr;display:flex;border:1px solid var(--line);background:var(--paper);font-size:15px;color:var(--muted);max-width:340px}
+.fx b{padding:2px 12px;border-inline-end:1px solid var(--line);color:var(--green);font-style:italic}
+.fx span{padding:2px 12px;background:var(--sel);color:var(--ink);flex:1}
+.sheet{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--green);padding:22px;margin:22px 0}
+.defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));border:1px solid var(--line);margin-top:14px}
+.defs div{padding:12px 14px;border-inline-start:1px solid var(--line)}
+.defs div:first-child{border-inline-start:0}
+.defs b{display:block;color:var(--green);font-size:18px}
+.defs span{font-size:15px;color:var(--muted);line-height:1.55;display:block}
+.gridw{overflow-x:auto;padding:4px 0}
+table.g{direction:ltr;border-collapse:collapse;margin:8px auto}
+.g th{background:var(--soft);color:var(--muted);font-weight:500;font-size:13px;border:1px solid var(--line);padding:2px 10px;min-width:34px}
+.g td{border:1px solid var(--line);padding:0;background:var(--paper)}
+.g td.h{background:var(--soft);font-weight:700;text-align:center;padding:7px 10px}
+.g input{width:132px;border:0;padding:8px 10px;font:inherit;background:transparent;color:inherit;text-align:center}
+.g input:focus{outline:2px solid var(--green);outline-offset:-2px;background:var(--sel)}
+#ro{direction:ltr;text-align:center;font-size:14px;color:var(--muted);min-height:1.6em}
+.step{border-top:1px solid var(--line);padding:14px 0 4px}
+.step h3{font-size:18px;margin:0 0 4px}
+button,.btn{font:inherit;font-weight:500;cursor:pointer;border:1px solid var(--green);background:var(--green);color:var(--on-green);padding:8px 20px;border-radius:2px}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.num,textarea{font:inherit;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:8px 12px;border-radius:2px}
+.num{width:110px;margin-inline-end:8px}
+textarea{width:100%;min-height:96px;margin-bottom:10px}
+.msg{margin:8px 0 0;min-height:1.6em;font-size:16px}
+.opt{display:block;width:100%;text-align:start;background:var(--paper);color:var(--ink);border:1px solid var(--line);margin:6px 0;font-weight:400}
+.opt:disabled{cursor:default;opacity:1}
+.opt.ok{border-color:var(--green);background:var(--soft);font-weight:500}
+.opt.no{border-color:var(--bad);color:var(--bad)}
+.q{padding:10px 0 4px;border-top:1px solid var(--line)}
+.q:first-child{border-top:0}
+.why{font-size:15px;color:var(--muted)}
+.mod{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);padding:11px 0}
+.mod span{color:var(--muted);font-size:15px}
+.mod.on{background:var(--sel);padding-inline:10px;margin-inline:-10px}
+#fin{background:var(--sel);border:1px solid var(--line);padding:14px 18px;margin:22px 0}
+#fin[hidden],[hidden]{display:none}
+.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn{display:inline-block;text-decoration:none}
+.pay{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;border:1px solid var(--line);background:var(--sel);padding:14px 18px;margin:20px 0}
+.pay p{margin:0}
+.modh{font-family:"Secular One",Heebo,Arial,sans-serif;font-size:21px;margin:28px 0 4px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.row{display:flex;align-items:center;gap:14px;padding-block:7px;padding-inline-start:var(--o,0px)}
+.nd{flex:none;width:54px;height:54px;border-radius:50%;border:2px solid var(--line);background:var(--soft);color:var(--muted);font:700 17px Heebo,Arial,sans-serif;padding:0;display:grid;place-items:center}
+.nd.open{background:var(--green);border-color:var(--green);color:var(--on-green);width:66px;height:66px;font-size:22px}
+.row .t{font-weight:500;line-height:1.3;display:block}
+.row small{display:block;color:var(--muted);font-size:14px;line-height:1.3}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="hw"><b>אקסל בשלושים צעדים</b><span>שיעור 1 מתוך 30 · חינם · <span id="pl">0 מתוך 4 משימות</span></span></div><div class="track"><div id="bar"></div></div></header>
+<main>
+<div id="home">
+<div class="fx" dir="ltr"><b>fx</b><span>=COURSE(30)</span></div>
+<h1>אקסל בשלושים צעדים</h1>
+<p>מסלול מהטבלה הראשונה ועד דשבורד ופרויקטים אמיתיים. שיעור 1 פתוח לך עכשיו, בחינם.</p>
+<button id="go">התחל את שיעור 1</button>
+<div class="pay" id="pay"><div><b>שיעור 1 חינם. שיעורים 2–30 נעולים.</b><p class="msg" id="mc" aria-live="polite">כל השיעורים, התרגילים והשאלות העסקיות נפתחים עם רכישת הקורס.</p></div><button id="cta">פתח את הקורס המלא</button></div>
+<div id="trail"></div>
+</div>
+<div id="lesson" hidden>
+<button class="alt" id="back">חזרה למסלול</button>
+<h1>שיעור 1: הטבלה הראשונה שלך</h1>
+<p>20 דקות, בלי ידע קודם. תקליד נתונים, תחשב סכום, ותראה בעצמך למה אקסל עושה את העבודה בשבילך.</p>
+
+<section class="sheet">
+<h2>מה זה אקסל, ולמה זה שווה 20 דקות</h2>
+<p>אקסל הוא דף חשבון ענק, מחולק לריבועים קטנים. אנשים משתמשים בו כדי לנהל תקציב, לעקוב אחרי מכירות ולהחליט לפי מספרים ולא לפי תחושת בטן. שלושה מושגים מספיקים כדי להתחיל:</p>
+<div class="defs">
+<div><b>תא</b><span>ריבוע אחד בטבלה. כל נתון יושב בתא משלו.</span></div>
+<div><b>כתובת</b><span>עמודה היא אות, שורה היא מספר. התא B3 נמצא בעמודה B ובשורה 3.</span></div>
+<div><b>נוסחה</b><span>הוראת חישוב שמתחילה בסימן =. אקסל מחשב אותה בשבילך.</span></div>
+</div>
+</section>
+
+<section class="sheet">
+<h2>תרגול: מטבלה ריקה לסכום מחושב</h2>
+<p>תרשום את קניות השבוע בטבלה, בדיוק כמו באקסל אמיתי. אפשר לעבור בין תאים עם Tab.</p>
+<div class="gridw"><table class="g"><thead><tr><th></th><th>A</th><th>B</th></tr></thead><tbody><tr><th>1</th><td class="h">מוצר</td><td class="h">מחיר</td></tr></tbody><tbody id="gb"></tbody></table></div>
+<div id="ro" aria-live="polite"></div>
+
+<div class="step"><h3>שלב א: הקלד את הנתונים</h3>
+<p>בעמודה A הקלד ארבעה מוצרים (קפה, לחם, חלב, ביצים), ובעמודה B את המחירים לפי הסדר: 12, 8, 6, 15.</p>
+<button id="c1">בדוק את הטבלה</button><p class="msg" id="m1" aria-live="polite"></p></div>
+
+<div class="step"><h3>שלב ב: חשב בראש</h3>
+<p>כמה עולה הכול ביחד?</p>
+<input class="num" id="man" type="number" inputmode="decimal" aria-label="הסכום"><button id="c2">בדוק</button><p class="msg" id="m2" aria-live="polite"></p></div>
+
+<div class="step"><h3>שלב ג: תן לאקסל לחשב</h3>
+<p>לחץ על התא B6, הקלד <code dir="ltr">=SUM(B2:B5)</code> ולחץ Enter.</p>
+<p class="msg" id="m3" aria-live="polite"></p></div>
+</section>
+
+<section class="sheet">
+<h2>חמש שאלות מהירות</h2>
+<div id="quiz"></div>
+<p class="msg" id="score" aria-live="polite"></p>
+</section>
+
+<section class="sheet">
+<h2>שאלה לחשיבה</h2>
+<p>אתה פותח דוכן קפה קטן. אילו שלושה נתונים היית רושם בטבלה בכל יום כדי לדעת אם העסק מרוויח? ואיך אקסל היה עוזר לך לראות את זה מהר?</p>
+<textarea id="idea" aria-label="התשובה שלך"></textarea>
+<button id="ib">הצג רעיון לדוגמה</button><p class="msg" id="mi" aria-live="polite"></p>
+<div id="ex" hidden><p>רעיון אפשרי: בכל יום רושמים כמה כוסות נמכרו, כמה עלו חומרי הגלם, ומה ההוצאות הקבועות לאותו יום. שורה אחת לכל יום, עמודה אחת לכל נתון. בסוף השבוע SUM מסכם הכול, וההפרש בין ההכנסות להוצאות מראה אם הרווחת. אין תשובה אחת נכונה. השווה לרעיון שלך ושים לב מה חסר ומה עוד כדאי למדוד.</p></div>
+</section>
+
+<div id="fin" hidden><b>סיימת את שיעור 1.</b> הטבלה והנוסחה שבנית הן הבסיס לכל מה שבא אחר כך.<p style="margin:8px 0 0"><button id="fb">חזרה למסלול</button></p></div>
+
+</div>
+</main>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const cells={},done={table:0,formula:0,quiz:0,idea:0};let raw6='';
+const fmt=v=>+v.toFixed(2);
+function mark(k){if(done[k])return;done[k]=1;const n=Object.values(done).reduce((a,b)=>a+b,0);$('#bar').style.width=n*25+'%';$('#pl').textContent=n+' מתוך 4 משימות';if(n==4)$('#fin').hidden=false}
+const num=id=>{const v=parseFloat((cells[id]||'').replace(',','.'));return isNaN(v)?0:v};
+function ev(f){try{let s=f.slice(1).toUpperCase().replace(/\s/g,'');
+s=s.replace(/SUM\(([AB])(\d):([AB])(\d)\)/g,(m,a,b,c,d)=>{let t=0;for(let k=a.charCodeAt(0);k<=c.charCodeAt(0);k++)for(let r=+b;r<=+d;r++)t+=num(String.fromCharCode(k)+r);return t});
+s=s.replace(/[AB][1-6]/g,m=>num(m));
+if(!/^[\d+\-*\/().]+$/.test(s))return null;const v=Function('return '+s)();return isFinite(v)?v:null}catch(e){return null}}
+const gb=$('#gb');
+for(let r=2;r<=6;r++){const tr=document.createElement('tr');tr.innerHTML='<th>'+r+'</th>'+['A','B'].map(c=>'<td><input id="'+c+r+'" autocomplete="off" dir="auto"'+(c+r=='A6'?' value="סה״כ" readonly':'')+(c=='B'&&r<6?' inputmode="decimal"':'')+' aria-label="תא '+c+r+'"></td>').join('');gb.append(tr)}
+const b6=$('#B6');
+function recalc(blur){const f=raw6.trim();$('#ro').textContent='';
+if(f[0]=='='&&document.activeElement!==b6){const v=ev(f);if(v!=null){b6.value=fmt(v);$('#ro').textContent='B6 = '+fmt(v)+'   (נוסחה: '+f+')'}}
+if(blur&&f){const m=$('#m3');
+if(!done.table){m.textContent='מלא קודם את הטבלה ולחץ ״בדוק את הטבלה״ בשלב א.';return}
+if(f[0]!='='){m.textContent='נוסחה מתחילה בסימן =. נסה: =SUM(B2:B5)';return}
+const v=ev(f),t=['B2','B3','B4','B5'].reduce((a,k)=>a+num(k),0);
+if(v==null)m.textContent='אקסל לא הבין את הנוסחה. רמז: =SUM(B2:B5)';
+else if(!/[AB]\d/i.test(f))m.textContent='כמעט. השתמש בכתובות התאים, כדי שהתוצאה תתעדכן כשתשנה מחיר. רמז: =SUM(B2:B5)';
+else if(v!=t)m.textContent='יצא '+fmt(v)+', אבל הסכום של B2:B5 הוא '+fmt(t)+'. בדוק את הטווח.';
+else{m.textContent='✓ זה הרגע שבגללו אנשים אוהבים אקסל. עכשיו שנה את מחיר החלב ל-10 וראה את B6 מתעדכן לבד.';mark('formula')}}}
+$$('.g input').forEach(i=>i.addEventListener('input',()=>{if(i.id=='B6')raw6=i.value;else cells[i.id]=i.value;recalc(false)}));
+b6.addEventListener('focus',()=>{b6.value=raw6});
+b6.addEventListener('blur',()=>{raw6=b6.value;recalc(true)});
+b6.addEventListener('keydown',e=>{if(e.key=='Enter')b6.blur()});
+$('#c1').onclick=()=>{const m=$('#m1'),want=[12,8,6,15];
+const okA=['A2','A3','A4','A5'].every(k=>(cells[k]||'').trim());
+const okB=want.every((w,i)=>{const k='B'+(i+2);return (cells[k]||'').trim()!==''&&num(k)==w});
+if(!okA)m.textContent='חסר שם מוצר באחד התאים בעמודה A.';
+else if(!okB)m.textContent='המחירים בעמודה B צריכים להיות 12, 8, 6, 15 לפי הסדר.';
+else{m.textContent='✓ מצוין. זו כבר טבלה אמיתית.';mark('table')}};
+$('#c2').onclick=()=>{const v=parseFloat($('#man').value);$('#m2').textContent=isNaN(v)?'הקלד מספר.':v==41?'✓ נכון: 12+8+6+15=41. ידני עובד, אבל תחשוב על טבלה של 500 שורות.':'לא בדיוק. חבר שוב: 12+8+6+15.'};
+const Q=[
+['מהו ״תא״ באקסל?',['הריבוע שנוצר בחיתוך בין שורה לעמודה','שורה שלמה בטבלה','שם של גיליון','סוג של גרף'],0,'תא הוא היחידה הבסיסית. כל נתון שתקליד יושב בתא אחד.'],
+['מהי הכתובת של התא שנמצא בעמודה B בשורה 3?',['3B','C2','B3','BB3'],2,'קודם אות העמודה ואז מספר השורה: B3.'],
+['באיזה סימן מתחילה כל נוסחה באקסל?',['#','=','@','$'],1,'בלי הסימן = אקסל חושב שזה סתם טקסט ולא מחשב כלום.'],
+['איזו נוסחה מחברת את התאים B2 עד B5?',['=ADD(B2-B5)','=B2:B5','=TOTAL(B2,B5)','=SUM(B2:B5)'],3,'SUM מחברת טווח, והנקודתיים אומרות ״מ-B2 עד B5״.'],
+['שינית מספר בתא שהנוסחה מתייחסת אליו. מה קורה לתוצאה?',['צריך להקליד את הנוסחה מחדש','היא מתעדכנת מיד, אוטומטית','היא נשארת כמו קודם','אקסל מציג שגיאה'],1,'זה הכוח של אקסל: משנים נתון, והכול מתחשב מחדש.']];
+let ans=0,sc=0;
+Q.forEach((q,i)=>{const d=document.createElement('div');d.className='q';
+d.innerHTML='<p><b>'+(i+1)+'. '+q[0]+'</b></p>'+q[1].map((o,j)=>'<button class="opt" data-j="'+j+'">'+o+'</button>').join('')+'<p class="why" hidden></p>';
+const bs=d.querySelectorAll('.opt');
+bs.forEach(b=>b.onclick=()=>{const j=+b.dataset.j;bs.forEach(x=>x.disabled=true);
+bs[q[2]].classList.add('ok');bs[q[2]].prepend('✓ ');
+if(j!=q[2]){b.classList.add('no');b.prepend('✗ ')}else sc++;
+const w=d.querySelector('.why');w.hidden=false;w.textContent=q[3];
+if(++ans==Q.length){$('#score').textContent='הציון שלך: '+sc+' מתוך '+Q.length;mark('quiz')}});
+$('#quiz').append(d)});
+$('#ib').onclick=()=>{if($('#idea').value.trim().length<8){$('#mi').textContent='כתוב לפחות משפט אחד. אין תשובה לא נכונה.';return}
+$('#mi').textContent='';$('#ex').hidden=false;mark('idea')};
+const MODS=[
+['יסודות',['הטבלה הראשונה שלך','הקלדה וסוגי נתונים','עיצוב שנראה מקצועי','שורות, עמודות וגיליונות','העתקה וגרירה חכמה','הדפסה ושמירה']],
+['חישובים',['סכום, ממוצע, מינימום ומקסימום','חישובי אחוזים','התייחסות קבועה ויחסית','הפונקציה IF','COUNT ו-COUNTIF','תרגול מסכם: דוח הוצאות']],
+['עבודה עם נתונים',['מיון נתונים','סינון נתונים','טבלאות אקסל','עיצוב מותנה','תיקוף נתונים ורשימות נפתחות','ניקוי נתונים מבולגנים']],
+['חיפוש וניתוח',['VLOOKUP','XLOOKUP','SUMIFS','COUNTIFS ו-AVERAGEIFS','טבלאות ציר, חלק א','טבלאות ציר, חלק ב']],
+['גרפים ופרויקטים',['גרפים בסיסיים','גרפים שמספרים סיפור','הדשבורד הראשון שלך','פרויקט: תקציב אישי','פרויקט: מכירות של עסק קטן','פרויקט סיום']]];
+const OFF=[0,30,52,52,30,0];let cnt=0;const tr=$('#trail');
+function showLesson(){$('#home').hidden=true;$('#lesson').hidden=false;scrollTo(0,0)}
+function showHome(){$('#lesson').hidden=true;$('#home').hidden=false;if(Object.values(done).every(Boolean)){const b=$('#n1');b.textContent='✓';b.nextElementSibling.querySelector('small').textContent='שיעור 1 · הושלם'}scrollTo(0,0)}
+function lockedMsg(k){$('#mc').textContent='שיעור '+k+' נעול. שיעורים 2–30 נפתחים עם רכישת הקורס.';$('#pay').scrollIntoView({behavior:'smooth',block:'center'})}
+MODS.forEach((m,mi)=>{const h=document.createElement('div');h.className='modh';h.textContent='חלק '+(mi+1)+': '+m[0];tr.append(h);
+m[1].forEach((t,i)=>{cnt++;const k=cnt,r=document.createElement('div');r.className='row';r.style.setProperty('--o',OFF[i]+'px');
+r.innerHTML=(k==1?'<button class="nd open" id="n1" aria-label="התחל את שיעור 1">▶</button>':'<button class="nd" aria-label="שיעור '+k+' נעול: '+t+'">🔒</button>')+'<div><span class="t">'+t+'</span><small>שיעור '+k+(k==1?' · חינם · פתוח':' · נעול')+'</small></div>';
+r.querySelector('button').onclick=()=>k==1?showLesson():lockedMsg(k);tr.append(r)})});
+$('#go').onclick=showLesson;$('#back').onclick=showHome;$('#fb').onclick=showHome;
+$('#cta').onclick=()=>{$('#mc').textContent='זה אב-טיפוס של האתר. כאן תחובר הרשמה ותשלום, ואחריהן ייפתחו שיעורים 2–30.'};
+</script>
+</body>
+</html>
